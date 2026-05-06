@@ -20,7 +20,7 @@
 **VPS 或 Termux**：
 
 ```bash
-curl -sL https://raw.githubusercontent.com/axiom-fn/get/main/install.sh | bash
+curl -sL https://raw.githubusercontent.com/axiom-fn/clash-sub/main/install.sh | bash
 ```
 
 安裝後輸入：
