@@ -28,7 +28,7 @@ python3 - "$INSTALL_DIR" "$PORT" "$_A" "$_S" <<'PYEOF2'
 import sys, marshal, zlib, base64, os
 idir, port, a_enc, s_enc = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 for enc, fname in [(a_enc,'clash_admin.py'), (s_enc,'clash_sub_server.py')]:
-    stub = 'import marshal as _m,zlib as _z,base64 as _b\nexec(compile(_m.loads(_z.decompress(_b.b64decode(' + repr(enc) + "))),'<p>','exec'))\n"
+    stub = 'import marshal as _m,zlib as _z,base64 as _b\nexec(_m.loads(_z.decompress(_b.b64decode(' + repr(enc) + "))))\n"
     stub = stub.replace('25501', port)
     open(os.path.join(idir, fname), 'w').write(stub)
 PYEOF2
